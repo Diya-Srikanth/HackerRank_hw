@@ -1,0 +1,192 @@
+#1 Introduction to Sets
+
+def average(array):
+    a = set(array)
+    return(float(sum(a)/len(a)))
+     
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    result = average(arr)
+    print(result)
+    
+    -----------------------------
+    
+#2 No idea!
+
+if __name__ == '__main__':
+    a=input().split(' ')
+    l=([int(i) for i in input().split(' ')])
+    firstset=set([int(i) for i in input().split(' ')])
+    secondset=set([int(i) for i in input().split(' ')])
+    p=0
+    for i in l:
+        if i in firstset:
+            p+=1
+        if i in secondset:
+            p-=1
+    print(p)
+    
+   ----------------------------------
+   
+#3 Symmetric Difference
+
+if __name__ == '__main__':
+    input()
+    s1=set(map(int, ((input().split()))))
+    input()
+    s2=set(map(int, ((input().split()))))
+    fs = s1.difference(s2)
+    ss = s2.difference(s1)
+    ss = sorted(fs.union(ss))
+    for i in ss:
+        print(i)
+        
+    ---------------------------------------
+      
+#4 Set.add()
+
+if __name__ == '__main__':
+    s = set()
+    for i in range(int(input())):
+        s.add(input())
+    print(len(s))
+    
+    ------------------------------------------
+    
+#5 Set.discard(), Set.remove() and Set.pop()
+
+n = int(input())
+s = set(map(int, input().split()))
+k = int(input())
+
+for i in range(k):
+    t = input()
+    t = t.split(" ")
+    if t[0] == "remove":
+        if int(t[1]) in s:
+            s.remove(int(t[1]))
+    elif t[0] == "discard":
+        if int(t[1]) in s:
+            s.discard(int(t[1]))
+    elif t[0] == "pop":
+        s.pop()
+print(sum(s))
+      
+     ------------------------------------------
+     
+#6 Set.union() operation 
+
+if __name__=='__main__':
+    a = int(input())
+    b = set(map (int, input().split()))
+    c = int(input())
+    d = set(map (int, input().split()))
+    print(len(b.union(d)))
+    
+     ------------------------------------------
+     
+#7 Set.intersection() operation
+
+if __name__ == '__main__':
+    a = int(input())
+    b = set(map(int,(input().split())))
+    c = int(input())
+    d = set(map(int,(input().split())))
+    s = b.intersection(d)
+    print(len(s))
+    
+     ------------------------------------------
+     
+#8 Set.difference() operation
+
+if __name__ == '__main__':
+    a = int(input())
+    b = set(map(int,(input().split())))
+    c = int(input())
+    d = set(map(int,input().split()))
+    s = b.difference(d)
+    print(len(s))
+    
+      ------------------------------------------
+      
+#9 Set.symmetric_difference() operation
+
+if __name__ == '__main__':
+    a = int(input())
+    b = set(map(int,(input().split())))
+    c = int(input())
+    d = set(map(int,(input().split())))
+    s = b.symmetric_difference(d)
+    print(len(s))
+    
+      ------------------------------------------
+      
+#10 Set Mutations
+
+if __name__ == '__main__':
+    c = int(input())
+    s = set(map(int, input().split()))
+    d = int(input())
+    for i in range(d):
+        a=input().split(" ")
+        a1=set(map(int,input().split())) 
+        if a[0]== "intersection_update":
+            s.intersection_update(a1)
+        elif a[0] == "update":
+            s.update(a1)
+        elif a[0] == "symmetric_difference_update":
+            s.symmetric_difference_update(a1)
+        elif a[0] == "difference_update":
+            s.difference_update(a1)
+    print(sum(s))
+    
+       ------------------------------------------
+       
+ #11 Check Subset 
+ 
+ a = int(input())
+for i in range(a):
+    An = int(input())
+    A = set(map(int, input().split()))
+    Bn = int(input())
+    B = set(map(int, input().split()))
+    print (A.union(B)== B)
+    
+       ------------------------------------------
+       
+ #12 The captain's Room
+ 
+ 
+k = int(input())
+lis = list(map(int, input().split(' ')))
+set_ = set(lis)
+for i in set_:
+    lis.remove(i)
+    if i not in lis:
+        print(i)
+        break
+        
+        ------------------------------------------
+        
+#13 Check Strict Superset
+
+A = set(map(int, input().split()))
+n = int(input())
+c=0
+for i in range(n):
+    N = set(map(int, input().split()))
+    if N.union(A)==A:
+        c+=1
+    else:
+        continue
+if c == n:
+    print(True)
+else:
+    print(False)
+      
+         ------------------------------------------
+
+
+
