@@ -55,7 +55,7 @@ from collections import OrderedDict
 dic =  OrderedDict()
 for i in range(int(input())):
     inp = input().split()
-    key = ' '.join(inp[:-1])
+    dic = ' '.join(inp[:-1])
     value = int(inp[-1])
     if key in dic:
         dic[key] = dic[key] + value
