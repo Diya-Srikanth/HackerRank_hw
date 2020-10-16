@@ -1,0 +1,121 @@
+#1 collections.Counter()
+
+from collections import Counter
+n = int(input())
+s = Counter(map(int,input().split()))
+x = int(input())
+l = []
+for i in range(x):
+    a,b = map(int,input().split())
+    if s[a] > 0:
+        l.append(b)
+        s.subtract(Counter([a]))
+print (sum(l))
+            
+      -------------------------------------
+      
+#2 DefaultDict Tutorial
+
+from collections import defaultdict
+d = defaultdict(list)
+n, m = map(int, input().split())
+words = []
+for i in range(0,n):
+    words.append(input())
+for j in range(0,m):
+    t = input()
+    d=[]
+    for i in range(0, n):
+        if(t == words[i]):
+            d.append(i+1)
+    if not d:
+        print("-1")
+    else:
+        print(" ".join([str(x) for x in d]))
+        
+        -------------------------------------
+        
+#3 Collections.namedtuple()
+
+from collections import namedtuple
+N=int(input())
+Student =namedtuple('Student', input().split())
+sm=0.0
+for i in range(N):
+    m,n,p,q,=input().split()
+    st=Student(m,n,p,q)
+    sm=sm+float(st.MARKS)
+print("{:.2f}".format(sm/N))   
+
+        -------------------------------------
+         
+ #4 Collections.OrderedDict()
+ 
+from collections import OrderedDict
+dic =  OrderedDict()
+for i in range(int(input())):
+    inp = input().split()
+    key = ' '.join(inp[:-1])
+    value = int(inp[-1])
+    if key in dic:
+        dic[key] = dic[key] + value
+    else:
+        dic[key] = value
+for key, value in dic.items():
+    print(key+' '+str(value))
+    
+          -------------------------------------
+          
+#5 Word Order
+
+from collections import Counter
+
+n = int(input())
+words = [input().strip() for _ in range(n)]
+counts = Counter(words)
+
+print(len(counts))
+print(*counts.values())
+
+          -------------------------------------
+          
+#6 Collections.deque()
+
+from collections import deque
+n = deque()
+for i in range(int(input())):
+    a = input().split()
+    if a[0]=="append":
+        n.append(a[1])
+    elif a[0]=="appendleft":
+        n.appendleft(a[1])
+    elif a[0]=="pop":
+        n.pop()
+    elif a[0]=="popleft":
+        n.popleft()
+print(*n)
+
+          -------------------------------------
+          
+#7 Company logo
+
+from collections import Counter
+[print(*c) for c in Counter(sorted(input())).most_common(3)]
+
+          -------------------------------------
+            
+#8 Piling Up!
+
+T=int(input())
+for i in range(T):
+    num=int(input())
+    arr=list(map(int,input().split()))
+    f=max(arr)
+    if arr[0]==f or arr[-1]==f:
+        print('Yes')
+    else:
+        print('No')
+        
+          -------------------------------------
+
+
